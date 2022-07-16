@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +23,16 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        User::create([
+            'name' => 'Fernando Acosta',
+            'email' => 'fernando@gmail.com',
+            'email_verified_at' => Date::now(),
+            'password' => Hash::make('123'),
+            'role' => 1,
+        ]);
+
+        $this->call(SalariosSeeder::class);
+        $this->call(CategoriasSeeder::class);
     }
 }
