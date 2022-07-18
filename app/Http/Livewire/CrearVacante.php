@@ -58,6 +58,6 @@ class CrearVacante extends Component
         $salarios = Salario::all();
         $categorias = Categoria::all();
 
-        return view('vacantes.crear-vacante', compact('salarios', 'categorias'));
+        return view('vacantes.livewire.crear-vacante', compact('salarios', 'categorias'));
     }
 }
