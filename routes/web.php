@@ -19,8 +19,9 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->prefix('vacantes')->group(function () {
-    Route::get('/', [VacanteController::class, 'index'])->middleware(['auth', 'verified'])->name('vacantes.index');
-    Route::get('/create', [VacanteController::class, 'create'])->middleware(['auth', 'verified'])->name('vacantes.create');
+    Route::get('/', [VacanteController::class, 'index'])->name('vacantes.index');
+    Route::get('/create', [VacanteController::class, 'create'])->name('vacantes.create');
+    Route::get('/{vacante}/edit', [VacanteController::class, 'edit'])->name('vacantes.edit');
 });
 
 require __DIR__ . '/auth.php';
