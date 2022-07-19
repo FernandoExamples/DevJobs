@@ -30,7 +30,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 @auth
                     @if (auth()->user()->isRecrutier())
-                        <a href="{{ route('notificaciones') }}"
+                        <a href="{{ route('notificaciones') }}" target="_blank" rel="noopenner noreferrer"
                            class="mr-2 w-7 h-7 bg-indigo-600 hover:bg-indigo-800 rounded-full flex flex-col justify-center items-center text-sm font-extrabold text-white">
                             {{ auth()->user()->unreadNotifications->count() }}
                         </a>
