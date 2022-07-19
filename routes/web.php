@@ -23,5 +23,6 @@ Route::middleware(['auth', 'verified'])->prefix('vacantes')->group(function () {
     Route::get('/create', [VacanteController::class, 'create'])->name('vacantes.create');
     Route::get('/{vacante}/edit', [VacanteController::class, 'edit'])->name('vacantes.edit');
 });
+Route::get('/vacantes/{vacante}', [VacanteController::class, 'show'])->name('vacantes.show');
 
 require __DIR__ . '/auth.php';

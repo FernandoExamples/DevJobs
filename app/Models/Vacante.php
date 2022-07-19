@@ -21,4 +21,14 @@ class Vacante extends Model
         'descripcion',
         'imagen',
     ];
+
+    public function categoria()
+    {
+        return $this->belongsTo(Categoria::class);
+    }
+
+    public function salario()
+    {
+        return $this->belongsTo(Salario::class);
+    }
 }
