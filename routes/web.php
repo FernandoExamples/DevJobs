@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CandidatosController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\VacanteController;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
 
 Route::middleware(['auth', 'verified'])->prefix('vacantes')->group(function () {
     Route::get('/', [VacanteController::class, 'index'])->name('vacantes.index');
