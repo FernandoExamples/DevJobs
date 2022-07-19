@@ -48,13 +48,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Vacante::class);
     }
 
+    public function postulaciones()
+    {
+        return $this->hasMany(Candidato::class);
+    }
+
     public function isRecrutier()
     {
-        return $this->role_id == 2;
+        return $this->role == 2;
     }
 
     public function isDeveloper()
     {
-        return $this->role_id == 1;
+        return $this->role == 1;
     }
 }

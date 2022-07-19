@@ -46,4 +46,10 @@
         </div>
     @endguest
 
+    @auth
+        @if (auth()->user()->isDeveloper())
+            <livewire:postular-vacante :vacante="$vacante"></livewire:postular-vacante>
+        @endif
+    @endauth
+
 </div>

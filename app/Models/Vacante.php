@@ -10,7 +10,7 @@ class Vacante extends Model
     use HasFactory;
 
     protected $dates = ['last_day'];
-    
+
     protected $fillable = [
         'user_id',
         'titulo',
@@ -30,5 +30,10 @@ class Vacante extends Model
     public function salario()
     {
         return $this->belongsTo(Salario::class);
+    }
+
+    public function candidatos()
+    {
+        return $this->hasMany(Candidato::class);
     }
 }
