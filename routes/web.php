@@ -26,6 +26,6 @@ Route::middleware(['auth', 'verified'])->prefix('vacantes')->group(function () {
 });
 Route::get('/vacantes/{vacante}', [VacanteController::class, 'show'])->name('vacantes.show');
 
-Route::get('/notificaciones', NotificationController::class)->middleware(['auth', 'verified'])->name('notificaciones');
+Route::get('/notificaciones', NotificationController::class)->middleware(['auth', 'verified', 'role.recruiter'])->name('notificaciones');
 
 require __DIR__ . '/auth.php';
